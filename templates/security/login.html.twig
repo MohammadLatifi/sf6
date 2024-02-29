@@ -34,6 +34,14 @@
             <label for="inputPassword">Password</label>
             <input type="password" name="password" id="inputPassword" class="form-control rounded" autocomplete="current-password" required>
 
+     
+
+            <div class="form-check py-3">
+                <input class="form-check-input rounded" type="checkbox" name="_remember_me" checked>
+                <label class="form-check-label" for="remember-me">
+                    Remember me
+                </label>
+            </div>
             <input type="hidden" name="_csrf_token"
                 value="{{ csrf_token('authenticate') }}"
             >
