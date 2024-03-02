@@ -2,6 +2,7 @@ twig:
     file_name_pattern: '*.twig'
     paths:
         '%kernel.project_dir%/public/build/assets/img': img
+        
 
 when@test:
     twig:

@@ -11141,3 +11141,23 @@ header.masthead .post-heading .meta a {
   }
 }
 
+
+.sidebar-admin {
+  width: 280px;
+}
+.main-section-admin {
+  width:100vw;
+  padding: 1rem 0.5rem;
+
+}
+
+@media (min-width: 774px) {
+  .sidebar-admin {
+    height: 100vh;
+  }
+
+  .main-section-admin {
+    width: min-content;
+    padding: 3rem 3.5rem;
+  }
+}

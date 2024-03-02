@@ -27,23 +27,27 @@
     <body id="body-pd">
         <div class='container-fluid '>
             <div class="row">
-                <div class="bg-dark d-flex flex-column  col p-3 pb-5  text-white" style="width: 280px; height:100vh;">
+                <div class="sidebar-admin bg-dark d-flex flex-column  col p-3 pb-5  text-white " >
                     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                         <svg class="bi me-2" width="40" height="32">
                             <use xlink:href="#bootstrap"></use>
                         </svg>
                         <span class="fs-4">
-                            Dashboard
-                                                
+                            Dashboard              
                         </span>
                     </a>
                     <hr>
                     <ul class="nav nav-pills flex-column mb-auto">
                         <li class="nav-item ">
-                            <a href="#" class="nav-link text-white" aria-current="page">
+                            <a href="{{path('app_post_index')}}" class="nav-link text-white" aria-current="page">
                                 <i class="fa-solid fa-pen-to-square" width="24" height="24"></i>
-                                posts
-                                                        
+                                Posts              
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="{{path('app_image_index')}}" class="nav-link text-white" aria-current="page">
+                                <i class="fa-regular fa-image" width="24" height="24"></i>
+                                Images              
                             </a>
                         </li>
 
@@ -60,7 +64,7 @@
                     </div>
                 </div>
                 <!--Container Main start-->
-                <div class="bg-light col-9">
+                <div class="bg-light col-9 main-section-admin ">
                     {% block body %}{% endblock %}
                 </div>
             </div>
