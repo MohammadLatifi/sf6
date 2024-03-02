@@ -48,7 +48,8 @@
                     Text        
                 </th>
                 <td>
-                    {{ post.text }}
+                    {% set myHtmlString = post.text %}
+                    {{ myHtmlString|raw }}
                 </td>
             </tr>
             <tr>

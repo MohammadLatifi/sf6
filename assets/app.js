@@ -7,6 +7,9 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 import "./styles/app.css";
+import $ from "jquery";
+import Trix from "trix"
+window.$ = $;
 
 window.addEventListener("DOMContentLoaded", () => {
   let scrollPos = 0;
@@ -70,6 +73,4 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   linkColor.forEach((l) => l.addEventListener("click", colorLink));
-
-  // Your code to run since DOM is loaded and ready
 });
