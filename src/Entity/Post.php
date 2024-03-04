@@ -4,7 +4,6 @@ namespace App\Entity;
 
 use App\Repository\PostRepository;
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -19,20 +18,20 @@ class Post
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $subtitle = null;
+
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $text = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $image = null;
 
     #[ORM\Column]
     private ?\DateTimeImmutable $created_at = null;
 
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updated_at = null;
-
-    #[ORM\ManyToMany(targetEntity: Image::class, inversedBy: 'posts')]
-    private Collection $Images;
-
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $subtitle = null;
 
     public function __construct()
     {
@@ -92,30 +91,6 @@ class Post
         return $this;
     }
 
-    /**
-     * @return Collection<int, Image>
-     */
-    public function getImages(): Collection
-    {
-        return $this->Images;
-    }
-
-    public function addImage(Image $image): static
-    {
-        if (!$this->Images->contains($image)) {
-            $this->Images->add($image);
-        }
-
-        return $this;
-    }
-
-    public function removeImage(Image $image): static
-    {
-        $this->Images->removeElement($image);
-
-        return $this;
-    }
-
     public function getSubtitle(): ?string
     {
         return $this->subtitle;
@@ -124,6 +99,18 @@ class Post
     public function setSubtitle(?string $subtitle): static
     {
         $this->subtitle = $subtitle;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): static
+    {
+        $this->image = $image;
 
         return $this;
     }

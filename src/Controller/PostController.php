@@ -85,18 +85,8 @@ class PostController extends AbstractController
     #[Route('/post/{id}', name: 'app_front_post_show', methods: ['GET'])]
     public function showInFront(Post $post): Response
     {
-        $images = $post->getImages();
-
-        $headerImage = $images->first();
-        $headerPath = $headerImage->getPath();
-        // $headerStyle = 'background-image:url({{ asset('.$headerPath.')}})';
-        // dd($headerStyle);
-        $images = $images->removeElement($headerImage);
-
         return $this->render('frontend/post.html.twig', [
             'post' => $post,
-            'headerPath' => $headerPath,
-            'relatedImages' => $images,
         ]);
     }
 }
