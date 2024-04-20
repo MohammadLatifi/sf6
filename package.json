@@ -23,6 +23,7 @@
         "build": "encore production --progress"
     },
     "dependencies": {
+        "@material/card": "^14.0.0",
         "jquery": "^3.7.1",
         "trix": "^2.0.10"
     }

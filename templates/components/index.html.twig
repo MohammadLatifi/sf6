@@ -9,9 +9,19 @@
                     <div class="site-heading">
                         <h1>
                             Clean Blog
+                                                                                                                                                                    
+                                                                                                                                        
+                                                                                                            
+                                                                                
+                                                    
                         </h1>
                         <span class="subheading">
                             A Blog Theme by Start Bootstrap
+                                                                                                                                                                    
+                                                                                                                                        
+                                                                                                            
+                                                                                
+                                                    
                         </span>
                     </div>
                 </div>
@@ -19,40 +29,58 @@
         </div>
     </header>
     <div class="container px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
+        <div class="row row-cols-lg-3">
 
-                {% for post in posts %}
-                    <!-- Post preview-->
-                    <div class="post-preview">
-                        <a href="{{ path('app_front_post_show', {'id': post.id}) }}">
-                            <h2 class="post-title">
-                            {{post.title}}
+            {% for post in posts %}
+
+                <div 
+                    class="mdc-card mdc-card--outlined" 
+                    style='padding:0px;margin:1%;'>
+                    <a style='padding:0px;margin:0px' href="{{ path('app_front_post_show', {'id': post.id}) }}">
+                        <div class="mdc-card__primary-action">
+                            <div class="mdc-card__media mdc-card__media--16-9" style='background-image:url( /build/assets/posts/{{ post.image }} )'></div>
+                            <!-- ... additional primary action content ... -->
+                            <div class="mdc-card__ripple"></div>
+                        </div>
+                        <div class="flex-column blog_card__description">
+
+                            <h2>
+                                {{ post.title }}
                             </h2>
-                            <h3 class="post-subtitle">
-                            {{post.subtitle}}
-                            </h3>
-                        </a>
-                        <p class="post-meta">
-                            Posted by
-                                            
-                            <a href="#!">
-                                Mohammad Latifi
-                            </a>
-                          
-                            {{ post.createdAt ? post.createdAt|date('Y-m-d H:i:s') : '' }}
-                                        
-                        </p>
-                    </div>
-                    <!-- Divider-->
-                    <hr class="my-4" />
-                {% endfor %}
-                <div class="d-flex justify-content-end mb-4">
-                    <a class="btn btn-primary text-uppercase" href="#!">
-                        Older Posts →
+                            <p>
+                                {{ post.subtitle }}
+                            </p>
+                            
+                        </div>
+
+                        <div class="mdc-card__actions blog_card__actions">
+                            <div>
+                                <strong>
+                                    Posted by                      
+                                </strong>
+                                <a href="">
+                                    Mohammad Latifi                                                               
+                                </a>
+                                -       
+                                {{ post.createdAt ? post.createdAt|date('Y.m.d H:i:s') : '' }}
+                            </div>
+                           
+                        </div>
                     </a>
                 </div>
-            </div>
+
+            {% endfor %}
+
+        </div>
+        <div class="d-flex justify-content-end mb-4">
+            <a class="btn btn-primary text-uppercase" href="#!">
+                Older Posts →
+                                                                                                                                
+                                                                                                        
+                                                                                
+                                                        
+                                
+            </a>
         </div>
     </div>
 {% endblock %}
